@@ -60,7 +60,7 @@ const QUESTIONS = [
         alt: 'filter icon',
     },
     {
-        question: 'Theres too much high end in an audio signal, what filter do you use?',
+        question: "There's too much high end in an audio signal, what filter do you use?",
         answer: [
             'Notch Filter',
             'Low Pass Filter',

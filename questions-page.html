@@ -8,25 +8,28 @@
     <title>Questions-page</title>
 </head>
 <body>
-    <header id="quiz-started">
-        <img class="play-button" src="Images/play button hover.png" alt="play-button"><br>
+    <header id="quiz-started" class="js-quiz-started-header">
+        <img class="play-button" src="Images/play-button-hover.png" alt="play-button"><br>
         <h1 class="title">Music Production Quiz</h1>
     </header>
     <main role="main" class="main">
-        <div id="current-score">Score: 1/10</div>
-        <section id="q-and-a">
-            <img src="Images/compression.png" alt="" class="center-image">
-            <form action="" class="q-and-a">
-                <label for="question" class="question">What audio effect could be used to reduce the dynamic range of an audio signal?</label>
-                <div class="answer"><label for="answer1"><input type="radio" name="answer" id="answer1">Saturator</label></div>
-                <div class="answer"><label for="answer1"><input type="radio" name="answer" id="answer1">Compressor</label></div>
-                <div class="answer"><label for="answer1"><input type="radio" name="answer" id="answer1">Filter</label></div>
-                <div class="answer"><label for="answer1"><input type="radio" name="answer" id="answer1">Dynamic Tube</label></div>
-            </form>
-            <a href="feedback-page.html" class="button"><button class="button" id="submit">Submit</button></a>
-        </section>
-        
-        <div id="question-count">1/10</div>
+        <div class="js-quiz">
+            <div id="current-score">Score: 1/10</div>
+            <div id="q-and-a" class="js-q-and-a" >
+                <img src="Images/compression.png" alt="" class="icon">
+                <form action="" id="q&a" class="js-q&a">
+                    <label for="question" class="question">What audio effect could be used to reduce the dynamic range of an audio signal?</label>
+                    <label for="answer1"><input type="radio" name="answer" id="answer1">Saturator</label></div>
+                    <label for="answer1"><input type="radio" name="answer" id="answer1">Compressor</label></div>
+                    <label for="answer1"><input type="radio" name="answer" id="answer1">Filter</label></div>
+                    <label for="answer1"><input type="radio" name="answer" id="answer1">Dynamic Tube</label></div>
+                </form>
+                <a href="feedback-page.html" class="button"><button class="button" id="submit">Submit</button></a>
+            </div>
+                
+            <div id="question-count">1/10</div>
+        </div>
+
     </main>
 </body>
 </html>

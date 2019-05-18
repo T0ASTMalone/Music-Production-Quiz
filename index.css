@@ -6,11 +6,6 @@ body {
     margin: 0;
 }
 
-header, .answer, .main{
-    border: 1px solid black;
-}
-
-
 /* header stuff*/
 
 .play-button {
@@ -25,6 +20,7 @@ header, .answer, .main{
 #quiz-started{
     display: flex;
     justify-content: center;
+    height: 50px;
 }
 
 
@@ -43,7 +39,6 @@ header, .answer, .main{
 #start-menu {
     align-items: center;
     height: 500px;
-    margin-top: 72px;
 }
 
 #current-score {
@@ -63,15 +58,27 @@ header, .answer, .main{
     padding: 0px 40px;
 }
 
-.question, .answer, #question-count, .center-image, .button {
+#qa {
+    border: 1px solid black;
+}
+
+.question, .answer, #question-count, .icon, .button {
     margin-bottom: 10px;
 }
 
-.center-image {
+.icon {
     width: 100px;
     align-self: center;
+    border-radius: 50%;
+    background-color: green;
 }
 
+.answer {
+    border: 1px solid black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
 .question {
     font-size: 16px;
     display: inline-block;
@@ -80,6 +87,11 @@ header, .answer, .main{
 .answer {
     display: flex;
     justify-content: flex-start;
+}
+
+.button {
+    width: 100px;
+    align-self: center;
 }
 
 #feedback, #final-score {
