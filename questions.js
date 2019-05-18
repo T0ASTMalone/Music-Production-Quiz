@@ -1,0 +1,86 @@
+const QUESTIONS = [
+    {
+        question: 'What is an audio effect that could be used to cut or boost certain frequencies of an audio signal?',
+        answer: [
+            'Compressor',
+            'Limiter',
+            'Gate',
+            'Eq',
+        ],
+        correctAnswer: 'Eq',
+        icon: 'eq-eight.png',
+        alt: 'effect icon',
+    },
+    {
+        question: 'What audio effect could be used to reduce the dynamic range of an audio signal?',
+        answer: [
+            'Saturator',
+            'Compressor',
+            'Filter',
+            'Dynamic Tube',
+        ],
+        correctAnswer: 'Compressor',
+        icon: 'compression.png',
+        alt: 'effect icon',
+    },
+    {
+        question: 'In order to remove low level noise from a recording, what would be the ideal audio effect?',
+        answer: [
+            'Gate',
+            'Reverb',
+            'Frequency Shifter',
+            'Limiter',
+        ],
+        correctAnswer: 'Gate',
+        icon: 'noise-gate.png',
+        alt: 'effect icon',
+    },
+    {
+        question: 'If the lower frequencies of an audio signal need to be cut, what type of filter would be best suited for this?',
+        answer: [
+            'Bell Filter',
+            'High Pass Filter',
+            'Low Pass Filter',
+            'Low Shelf Filter',
+        ],
+        correctAnswer: 'High Pass Filter',
+        icon: 'high-pass.png',
+        alt: 'filter icon',
+    },
+    {
+        question: 'What filter is used to remove everything except the vocal frequencies?',
+        answer: [
+            'Band Pass Filter',
+            'Peak Filter',
+            'Air Filter',
+            'Notch Filter',
+        ],
+        correctAnswer: 'Band Pass Filter',
+        icon: 'band-pass.png',
+        alt: 'filter icon',
+    },
+    {
+        question: 'Theres too much high end in an audio signal, what filter do you use?',
+        answer: [
+            'Notch Filter',
+            'Low Pass Filter',
+            'High Pass Filter',
+            'Bell Filter',
+        ],
+        correctAnswer: 'Low Pass Filter',
+        icon: 'low-pass.png',
+        alt: 'filter icon',
+    },
+    {
+        question: 'If a signal is getting too loud, what effect could be used to regulate its amplitude?',
+        answer: [
+            'Denoiser',
+            'Limiter',
+            'Noise Gate',
+            'Frequency Shifter',
+        ],
+        correctAnswer: 'Limiter',
+        icon: 'compression.png',
+        alt: 'effect icon',
+    },
+]
