@@ -31,6 +31,7 @@ body {
 /* main stuff*/
 main {
     margin-top: 20px;
+    font-weight: bold;
 }
 
 #q-and-a, 
@@ -80,7 +81,10 @@ main {
     justify-content: space-around;
 }
 
-.answer, #question-count, .icon, .button {
+.answer, 
+#question-count, 
+.icon, 
+.button {
     margin-bottom: 10px;
 }
 
