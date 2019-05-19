@@ -1,16 +1,19 @@
 * {
     box-sizing: border-box;
+    font-family: "Futura";
 }
 
 body {
     margin: 0;
+    background-color: #797979;
+    color: white;
 }
 
 /* header stuff*/
 
 .play-button {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 .title {
@@ -21,24 +24,30 @@ body {
     display: flex;
     justify-content: center;
     height: 50px;
+    align-items: center;
 }
 
 
 /* main stuff*/
-.main {
-    height: 500px;
+main {
     margin-top: 20px;
 }
 
-#q-and-a, #feedback, #final-score, #start-menu  {
+#q-and-a, 
+#feedback, 
+#final-score, 
+#start-menu, 
+#qa, 
+main {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
 #start-menu {
+    justify-content: space-between;
     align-items: center;
-    height: 500px;
+    height: 300px;
 }
 
 #current-score {
@@ -51,53 +60,106 @@ body {
 
 #question-count {
     text-align: center;
+    margin-top: 10px;
 }
 
-
-#q-and-a {
-    padding: 0px 40px;
+#qa, 
+#feedback, 
+#final-score, 
+.icon, 
+.button{
+    border: 3px solid #3F3F3F;
+    border-radius: 5px;
+    background-color: #9B9B9B;
 }
 
-#qa {
-    border: 1px solid black;
+.content-box {
+    font-size: 14px;
+    margin: 0px 20px;
+    height: 325px;
+    justify-content: space-around;
 }
 
-.question, .answer, #question-count, .icon, .button {
+.answer, #question-count, .icon, .button {
     margin-bottom: 10px;
 }
 
 .icon {
-    width: 100px;
+    width: 75px;
     align-self: center;
-    border-radius: 50%;
-    background-color: green;
 }
 
 .answer {
-    border: 1px solid black;
-    height: 40px;
+    height: 35px;
     display: flex;
     align-items: center;
 }
-.question {
-    font-size: 16px;
-    display: inline-block;
+
+.answer:hover{
+    background-color: #f0AA0A!important;
 }
 
-.answer {
-    display: flex;
-    justify-content: flex-start;
+.question {
+    font-size: 18px;
+    margin: 10px;
+}
+
+/* buttons */
+
+#start-button:hover {
+    border: 2px solid #17FC67;
+    color: #17FC67;
+    background-color: #797979;
 }
 
 .button {
     width: 100px;
+    height: 50px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
     align-self: center;
 }
 
-#feedback, #final-score {
-    font-size: 14px;
+.button:hover {
+    background-color: #2598F7;
+    border: 2px solid #2598F7;
 }
 
-#final-score {
-    padding-top: 38px;
+/*final score page*/
+
+#pass {
+    background-color: #f0AA0A;
+}
+
+@media only screen and (min-width: 700px) {
+    #start-menu, 
+    .content-box{
+        height: 600px;
+        width: 700px;
+        justify-content: space-around;
+        align-self: center;
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .button {
+        width: 150px;
+        height: 75px;
+        font-size: 18px;
+    }
+
+
+    #start-menu-icon, 
+    .icon {
+        height: 100px;
+        width: 100px;
+    }
+
+    .answer {
+        height: 75px;;
+    }
 }

@@ -7,21 +7,22 @@ function generateQuestionString () {
     const currentQ = QUESTIONS[count];
 
     return `
-    <div class="js-quiz">
+    <section class="js-quiz">
         <div id="current-score">Score: ${score}/${QUESTIONS.length}</div>
-        <div id="q-and-a" class="js-q-and-a" >
-            <img src="Images/${QUESTIONS[count].icon}" alt="${QUESTIONS[count].alt}" class="icon">
-            <form action="" id="qa" class="js-qa">
-                <label for="question" class="question">${QUESTIONS[count].question}</label>
-                <label for="answer1" class="answer"><input type="radio" name="answer" value="${QUESTIONS[count].answer[0]}" required><span>${QUESTIONS[count].answer[0]}</span></label>
-                <label for="answer2" class="answer"><input type="radio" name="answer" value="${QUESTIONS[count].answer[1]}" required><span>${QUESTIONS[count].answer[1]}</span></label>
-                <label for="answer3" class="answer"><input type="radio" name="answer" value="${QUESTIONS[count].answer[2]}" required><span>${QUESTIONS[count].answer[2]}</span></label>
-                <label for="answer4" class="answer"><input type="radio" name="answer" value="${QUESTIONS[count].answer[3]}" required><span>${QUESTIONS[count].answer[3]}</span></label>
+        <section id="q-and-a" class="js-q-and-a">
+            <img src="Images/${currentQ.icon}" alt="${currentQ.alt}" class="icon">
+            <form action="" id="qa" class="js-qa content-box">
+                <label for="question" class="question">${currentQ.question}</label>
+                <label for="answer" class="answer"><input type="radio" name="answer" value="${currentQ.answer[0]}" required><span>${currentQ.answer[0]}</span></label>
+                <label for="answer" class="answer"><input type="radio" name="answer" value="${currentQ.answer[1]}" required><span>${currentQ.answer[1]}</span></label>
+                <label for="answer" class="answer"><input type="radio" name="answer" value="${currentQ.answer[2]}" required><span>${currentQ.answer[2]}</span></label>
+                <label for="answer" class="answer"><input type="radio" name="answer" value="${currentQ.answer[3]}" required><span>${currentQ.answer[3]}</span></label>
                 <button class="button" id="submit">Submit</button>
             </form>
-        </div>    
+        </section>    
         <div id="question-count">${count + 1}/${QUESTIONS.length}</div>
-    </div>`
+    </div>
+    `;
 }
 
 function renderQuestion() {
@@ -44,23 +45,24 @@ function handleAnswers() {
 function incorrectAnswerFeedback () {
     return `
     <div id="current-score">Score: ${score}/${QUESTIONS.length}</div>
-    <div id="feedback" class="js-feedback">
-        <img class="icon" src="Images/x.png" alt="x">
-        <h2>Woops</h2>
+    <img class="icon" src="Images/x.png" alt="x">
+    <section id="feedback" class="js-feedback content-box">
         <h2>The correct answer was: ${QUESTIONS[count].correctAnswer}</h2>
         <button class="button" id="continue">Continue</button>
-    </div>`;
+    </section>
+    `;
 }
 
 function correctAnswerFeedback () {
     return `
     <div id="current-score">Score: ${score}/${QUESTIONS.length}</div>
-    <div id="feedback" class="js-feedback">
-        <img class="icon" src="Images/check-mark.png" alt="check-mark">
+    <img class="icon" src="Images/check-mark.png" alt="check-mark">
+    <section id="feedback" class="js-feedback content-box">
         <h2>That's Correct!</h2>
-        <h2>I can see that platinum record already</h2>
+        <h2>I can see that platinum record already!</h2>
         <button class="button" id="continue">Continue</button>
-    </div>`;
+    </section>
+    `;
 }
 
 function nextQuestion() {
@@ -74,12 +76,24 @@ function nextQuestion() {
 }
 
 function generateFinalScoreString () {
-    return `<div id="final-score" class="js-final-score">
-    <img class="icon" src="Images/smile.png" alt="smiley face">
-    <h2>Wow your final score is: </h2>
-    <h2>${score}/${QUESTIONS.length}</h2>
-    <button class="button" id="reset">Back to start</button>
-    </div>`
+    if ((score / QUESTIONS.length) > 0.5 ) 
+        return `
+        <img class="icon" id="pass" src="Images/smile.png" alt="smiley face">
+        <section id="final-score" class="js-final-score content-box">
+            <h2>Wow your final score is: </h2>
+            <h2>${score}/${QUESTIONS.length}</h2>
+            <button class="button" id="reset">Back to start</button>
+        </section>
+        `;
+    else
+        return `
+        <img class="icon" src="Images/smile.png" alt="smiley face">
+        <section id="final-score" class="js-final-score content-box">
+            <h2>Wow your final score is: </h2>
+            <h2>${score}/${QUESTIONS.length}</h2>
+            <button class="button" id="reset">Back to start</button>
+        </section>
+        `;
 }
 
 function resetQuiz () {
@@ -87,7 +101,7 @@ function resetQuiz () {
         location.reload();
         count = 0;
         score = 0;
-    })
+    }); 
 }
 
 function handleQuizComplete() {
@@ -102,11 +116,19 @@ function startQuiz() {
     });
 }
 
+function checked() {
+    $('main').on('click', 'input',function(){
+        $('label').has("input[name='answer']:checked").css("background-color", "#f0AA0A");
+        $('label').has("input[name='answer']:not(:checked)").css("background-color", "#9B9B9B");
+    });
+}
+
 function Quiz() {
     startQuiz();
     handleAnswers();
     nextQuestion();
     resetQuiz();
+    checked();
 }
 
 $(Quiz);
